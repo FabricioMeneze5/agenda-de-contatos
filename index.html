@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Contatos</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="./imagens/agenda6.png">
+            <h1>Agenda de Contatos</h1>
+        </header>
+        <form id="form-add">
+            <ul>
+                <li>
+                    <input id="text-input" type="text" placeholder="Nome" required>
+                </li>
+                <li class="numberLi">
+                    <input id="number-input" type="number" placeholder="Número" required>
+                    <p class="message-error1">O número ja foi inserido</p>
+                    <p class="message-error2">O número deve conter 9 digitos.</p>
+                </li>
+                <li>
+                    <button id="btn" type="submit">Adicionar +</button>
+                </li>
+            </ul>
+        </form>
+
+        <table id="table-lista" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>---</td>
+                    <td>---</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<script src="main.js"></script>
+</body>
+</html>
