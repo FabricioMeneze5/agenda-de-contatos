@@ -1,3 +1,4 @@
+//criando constantes
 const form = document.getElementById('form-add');
 const textInput = document.getElementById('text-input');
 const numberInput = document.getElementById('number-input');
@@ -6,12 +7,14 @@ const telefone = [];
 
 let linhas = '';
 
+//criando evento ao cliar em submit
 form.addEventListener('submit', function(e){
     e.preventDefault();
 
     validaNumber();
 });
 
+//Validando numero de telefone com 9 digitos
 function validaNumber() {
     const numero = numberInput.value;
 
@@ -25,10 +28,12 @@ function validaNumber() {
     }
 }
 
+//criando linha para tabela para adicionar nome e numero.
 function adicionaLinha(){
     const corpoTabela = document.querySelector('tbody');
     let linha = '<tr>';
     
+    //verificando caso haja um numero adicionado anteriormente.
     if (telefone.includes(numberInput.value)) {
         numberInput.style.backgroundColor = 'rgb(213, 128, 128)';
         document.querySelector('.message-error1').style.display = 'block';
@@ -45,6 +50,7 @@ function adicionaLinha(){
 
             linhas += linha;
 
+            //resetando campos para adicionar outros dados.
             textInput.value = '';
             numberInput.value = '';
 
