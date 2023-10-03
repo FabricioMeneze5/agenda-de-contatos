@@ -17,8 +17,8 @@ function validateNumber() {
 
     if (number.length === 9){
         numberInput.style.backgroundColor = '';
-        addLine();
         errorBox.style.display = 'none';
+        addLine();
     } else{
         numberInput.style.backgroundColor = 'rgb(213, 128, 128)';
         errorBox.style.display = 'block';
