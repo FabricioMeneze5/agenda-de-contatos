@@ -57,15 +57,15 @@ header h1 {
 
 #form-add ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     list-style-type: none;
 }
 
-#form-add input, button {
+#form-add input {
     border: none;
     font-size: 24px;
-    margin: 0 16px;
+    width: 250px;
     background-color: #97dbd1;
     border-bottom: solid 2px grey;
     outline: none;
@@ -78,30 +78,28 @@ input::-webkit-inner-spin-button {
 
 #btn {
     padding: 8px;
+    font-size: 24px;
     background-color: #5aa2a5;
     color: white;
     cursor: pointer;
-    overflow: hidden;
     border: none;
+    border-radius: 10px;
 }
 
 .numberLi {
     position: relative;
-    width: auto;
 }
 
-.message-error1, .message-error2 {
+#error-box {
     display: none;
     position: absolute;
-    top: 15px;
-    width: 90%;
+    width: 250px;
     color: white;
     background-color:  rgb(213, 128, 128);
     border: solid 1px red;
-    margin: 16px;
 }
 
-#table-lista {
+#table-list {
     margin: 0 20%;
     width: 60%;
     text-align: center;
@@ -110,14 +108,14 @@ input::-webkit-inner-spin-button {
     background-color: white;
 }
 
-#table-lista th {
+#table-list th {
     padding-bottom: 16px;
     font-size: 24px;
     font-weight: bold;
     border-bottom: solid 2px black;
 }
 
-#table-lista td{
+#table-list td{
     padding: 8px 0;
     font-size: 18px;
     border-bottom: solid 1px rgba(0, 0, 0, 0.2);

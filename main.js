@@ -1,59 +1,54 @@
-//criando constantes
 const form = document.getElementById('form-add');
 const textInput = document.getElementById('text-input');
 const numberInput = document.getElementById('number-input');
-const nome = [];
-const telefone = [];
+const phone = [];
 
-let linhas = '';
+let errorBox = document.getElementById('error-box');
+let lines = '';
 
-//criando evento ao cliar em submit
 form.addEventListener('submit', function(e){
     e.preventDefault();
 
-    validaNumber();
+    validateNumber();
 });
 
-//Validando numero de telefone com 9 digitos
-function validaNumber() {
-    const numero = numberInput.value;
+function validateNumber() {
+    const number = numberInput.value;
 
-    if (numero.length === 9){
+    if (number.length === 9){
         numberInput.style.backgroundColor = '';
-        adicionaLinha();
-        document.querySelector('.message-error2').style.display = 'none';
+        addLine();
+        errorBox.style.display = 'none';
     } else{
         numberInput.style.backgroundColor = 'rgb(213, 128, 128)';
-        document.querySelector('.message-error2').style.display = 'block';
+        errorBox.style.display = 'block';
+        errorBox.innerHTML = ("the number must contain 9 digits")
     }
 }
 
-//criando linha para tabela para adicionar nome e numero.
-function adicionaLinha(){
-    const corpoTabela = document.querySelector('tbody');
-    let linha = '<tr>';
+function addLine(){
+    const tableBody = document.querySelector('tbody');
+    let line = '<tr>';
     
-    //verificando caso haja um numero adicionado anteriormente.
-    if (telefone.includes(numberInput.value)) {
+    if (phone.includes(numberInput.value)) {
         numberInput.style.backgroundColor = 'rgb(213, 128, 128)';
-        document.querySelector('.message-error1').style.display = 'block';
+        errorBox.style.display = 'block';
+        errorBox.innerHTML = ("number has already been added");
     } else {
         numberInput.style.backgroundColor = '';
-        document.querySelector('.message-error1').style.display = 'none';
+        errorBox.style.display = 'none';
 
-        nome.push(textInput.value);
-        telefone.push(numberInput.value);
+        phone.push(numberInput.value);
 
-            linha += `<td>${textInput.value}</td>`;
-            linha += `<td>${numberInput.value}</td>`;
-            linha += '</td>';
+            line += `<td>${textInput.value}</td>`;
+            line += `<td>${numberInput.value}</td>`;
+            line += '</td>';
 
-            linhas += linha;
+            lines += line;
 
-            //resetando campos para adicionar outros dados.
             textInput.value = '';
             numberInput.value = '';
 
-            corpoTabela.innerHTML = linhas;
+            tableBody.innerHTML = lines;
     }
 }
